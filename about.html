@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        body
+        {
+            margin: 0;
+            font-size: 100%;
+            background: white;
+
+        }
+        body a
+        {
+            text-decoration: none;
+            transition: 0.5 all;
+        }
+        h1,h2,h3,h4,h5,h6
+        {
+            margin: 0;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+        p
+        {
+            font-size: 0.9em;
+            color: #8e9398;
+            line-height: 2em;
+            letter-spacing: 1px;
+        }
+        ul
+        {
+            margin: 0;
+            padding: 0;
+        }
+        body img
+        {
+            border-radius: 4px;
+        }
+        header
+        {
+            position: absolute;
+            z-index: 9;
+            width: 100%;
+        }
+        nav
+        {
+            margin: 0;
+            padding: 0;
+        }
+        #logo a
+        {
+            float: left;
+            display: initial;
+            margin: 0;
+            letter-spacing: 1px;
+            color: white;
+            font-size: 1em;
+            font-weight: 700;
+            text-shadow: 2px 5px 3px black;
+        }
+        nav::after
+        {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        nav ul
+        {
+            float: right;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            position: relative;
+        }
+        nav ul li
+        {
+            margin: 0px 1em;
+            display: inline-block;
+            float: left;
+        }
+        .menu li a
+        {
+            font-weight: 500;
+            font-size: 1.0em;
+            letter-spacing: 2px;
+            padding-left: 0;
+            padding-right: 0;
+            padding: 10px 0;
+            color: white;
+            text-transform: uppercase;
+        }
+        .menu li ul li a
+        {
+            color: #555;
+            padding: 10px 10px;
+            font-size: 0.8em;
+        }
+        .menu li ul li:hover
+        {
+            background: wheat ;
+        }
+        nav .menu li a:hover
+        {
+            color: red;
+        }
+        .menu li.active a
+        {
+            color: red;
+        }
+        nav ul li:hover > ul
+        {
+            display: inherit;
+        }
+        nav ul ul li
+        {
+            width: 170px;
+            float: none;
+            display: list-item;
+            position: relative;
+            margin: 0;
+        }
+        nav ul ul li a
+        {
+            color: #333;
+            padding: 5px 10px;
+            display: block;
+        }
+        /*About Page*/
+        .main-banner.inner
+        {
+            background: url(./Images_for_Web/banner.jpg)no-repeat center;
+            background-size: cover;
+            position: relative;
+            height: 21em;
+        }
+        .banner-info
+        {
+            padding: 16em 0 0em 3em;
+            width: 32%;
+        } 
+        .banner-info h2 
+        {
+            font-size: 3.5em;
+            letter-spacing: 2px;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 2px 5px 3px black;
+        }
+        .banner-info p 
+        {
+            color: white;
+            font-size: 0.8em;
+            letter-spacing: 2px;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin: 0;
+            text-shadow: 2px 5px 3px black;
+        }
+        ol.breadcrumb
+        {
+            background: none;
+            margin: 0;
+            padding: 1em 2em;
+            background: #f7f7f7;
+
+        }
+        li.breadcrumb-item
+        {
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+        .breadcrumb-item.active
+        {
+            color: gray;
+        }
+        li.breadcrumb-item a
+        {
+            color: red;
+        }
+        .hand-crafted
+        {
+            background: #f7f7f7
+        }
+        h3.title
+        {
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            color: #292a2b;
+            text-transform: uppercase;
+            margin-bottom: 1em;
+        }
+        .sub-title 
+        {
+            font-size: 0.3em;
+            color: #919aa0;
+            letter-spacing: 2px;
+            display: block;
+            text-transform: uppercase;
+        }
+        .feature-grids h3, .bottom-gd.fea h3
+        {
+            color: #05c46b;
+            letter-spacing: 1px;
+            margin-top: 0em;
+            font-size: 1.4em;
+        }
+        .feature-grids p
+        {
+            margin: 0;
+        }
+        .feature-grids span
+        {
+            font-size: 1.5em;
+            text-align: center;
+            color: red;
+            line-height: 3em;
+        }
+        .bottom-gd, .bottom-gd2-active
+        {
+            background: #f8f9fa;
+            transition: 2s all;
+            box-shadow: 7px 7px 10px 0 rgba(76,110,245,.1);
+            padding: 2em 0;
+
+        }
+        .bottom-gd2-active
+        {
+            background: red;
+            transition: 2s all;
+
+        }
+        .bottom-gd:hover.f1 span ,.bottom-gd2-active span
+        {
+            color: #fff;
+        }
+        .bottom-gd2-active p
+        {
+            color: #fff;
+        }
+        .bottom-gd2-active h3
+        {
+            color: #fff;
+        }
+        .feature-grids h3, .bottom-gd.fea h3
+        {
+            font-size: 0.9em;
+            color: #1e272e;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        ul.tic-info li span
+        {
+            color: #ff4c4c;
+        }
+        ul.tic-info li
+        {
+            color: #566773;
+            font-size: 0.9em;
+            line-height: 2.2em;
+            letter-spacing: 1px;
+        }
+        .effect-w3
+        {
+            padding: 6px;
+            background: #f0f0f1;
+        }
+        .bottom-gd.row
+        {
+            margin: 0;
+        }
+        /*Stats About Grids*/
+        .service-content
+        {
+            margin-left: 1em;
+        }
+        .icon span
+        {
+            width: 60px;
+            height: 60px;
+            color: #007bff;
+            line-height: 60px;
+            text-align: center;
+            font-size: 22px;
+            transition: all 1s;
+        }
+        .service-content h4
+        {
+            font-size: 1.15em;
+            line-height: 1.75em;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #333;
+            letter-spacing: 2px;
+            margin-bottom: 0.5em;
+        }
+        /*Popular Products*/
+        h4
+        {
+            margin: 0;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-size: 2.8em;
+            line-height: 3em;
+            color: black;
+        }
+        .product-shoe-info
+        {
+            padding: 15px;
+            border: 1px solid black;
+        }
+        /*testimonials*/
+        .testimonials
+        {
+            background: #f2f2f2;
+        }
+        .sentence-info
+        {
+            padding: 2em 0;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .sentence-info h6
+        {
+            font-size: 1em;
+            color: #1e272e;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .sentence-info p span
+        {
+            font-size: 1.8em;
+            color: #505c65;
+        }
+        ul.list-unstyled.project-icons.clients li
+        {
+            margin: 0 0.2em;
+            text-align: center;
+            display: inline-block;
+        }
+        ul.list-unstyled.project-icons.clients li span
+        {
+            font-size: 0.8em;
+            color: red;
+        }
+        ul.list-unstyled.project-icons.clients li span:hover
+        {
+            opacity: 0.8;
+            transition: 0.5s all;
+        }
+        /*about*/
+        .men-item
+        {
+            position: relative;
+        }
+        .item-info-product h5
+        {
+            margin-top: 0.5em;
+        }
+        .shop-now
+        {
+            position: absolute;
+            bottom: 8%;
+            right: 8%;
+        }
+        .shop-now a
+        {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-decoration: none;
+            color: #333;
+        }
+        section.brands 
+        {
+           background: #1e272e;
+        }
+        .brand-items a span 
+        {
+          color: #757a7d;
+          font-size: 2.5em;
+        }
+        /*footer*/
+        footer
+        {
+            background: white;
+        }
+        h3.footer-title
+        {
+            font-size: 1.1em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #3d3f44;
+        }
+        .footer-grid_section_project
+        {
+            padding: 3em 0;
+        }
+        .footer-right
+        {
+            border-left: 1px solid #ddd ;
+            padding: 3em 0em 3em 2em;
+        }
+        footer p
+        {
+            font-size: 0.9em;
+        }
+        form.project-newsletter
+        {
+            display: flex;
+            margin-bottom: 2.5em;
+        }
+        .project-newsletter input[type='email']
+        {
+            padding: 0.6em 1em;
+            font-size: 15px;
+            color: black;
+            outline: none;
+            letter-spacing: 2px;
+            border: none;
+            border: none;
+            flex-basis: 70%;
+            background: #efeeee;
+        }
+        .project-newsletter button.btn1
+        {
+            color: red;
+            font-size: 17px;
+            letter-spacing: 1px;
+            padding: 14px 0;
+            border: transparent;
+            text-transform: uppercase;
+            transition: 0.5s all;
+            background: black;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 0;
+            padding: 0.7em 2em;
+        }
+        h2.logo-2 a
+        {
+            font-weight: 700;
+            font-size: 34px;
+            color: black;
+            text-shadow: 2px 5px 3px rgb(0,0,0,0.06);
+            letter-spacing: 1px;
+        }
+        .project_social_list li
+        {
+            display: inline-block;
+        }
+        .project_social_list li a
+        {
+            width: 34px;
+            height: 34px;
+            text-align: center;
+            display: inline-block;
+            font-size: 13px;
+            border-radius: 50%;
+        }
+        .project_social_list li a span
+        {
+            color: white;
+            line-height: 34px;
+        }
+        a.facebook
+        {
+            background: #3b5998;
+        }
+        a.twitter
+        {
+            background: rgb(54, 143, 220);
+        }
+        a.instagram
+        {
+            background: red;
+        }
+        a.google
+        {
+            background-color: #F44336;
+        }
+        .contact-info h5
+        {
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            color: #5e5e61;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .footer-grid_section_project li a
+        {
+            color: #727377;
+            font-size: 0.8em;
+            letter-spacing: 1px;
+        }
+        .footer-grid_section_project li a:hover
+        {
+            opacity: 0.8;
+        }
+        .cpy-right
+        {
+            display: flex;
+        }
+        .cpy-right p
+        {
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 0;
+            margin-top: 0.9em;
+            color: #555;
+        }
+        .cpy-right p a
+        {
+            color: #555;
+        }
+        .cpy-right p a:hover
+        {
+            color: red;
+        }
+        a.move-top span
+        {
+            color: white;
+            width: 36px;
+            height: 36px;
+            text-align: center;
+            border: none;
+            line-height: 2em;
+            background: #4a4b4c;
+        }
+    </style>    
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 px-0">
+                <div class="main-banner inner" id="home">
+                    <header class="header">
+                        <nav class="navbar navbar-expand-md navbar">
+                            <div id="logo">
+                                <h1><a href="#"><span class="fa fa-bold" aria-hidden="true"></span>ootie</a></h1>
+                            </div>    
+                                <ul class="menu navbar-nav ml-auto">
+                                    <li class="active"><a href="index.html" class="nav-link"><b>Home</b></b></a></li>
+                                    <li><a href="about.html" class="nav-link"><b>About</b></a></li>
+                                    <li><a href="Blog.html" class="nav-link"><b>Blog</b></a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                            <b>DROP DOWN</b>
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <ul type="none">
+                                                <li><a href="Blog.html" class="text-decoration-none"><b>Blog</b></a></li>
+                                                <li><a href="Shop.html" class="text-decoration-none"><b>Shop Now</b></a></li>
+                                                <li><a href="Single_Page.html" class="text-decoration-none"><b>Single</b></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>    
+                                    <li class="nav-item"><a href="Contact.html" class="nav-link"><b>Contact Us</b></a></li>
+                                </ul>
+                        </nav>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>                
+    
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="Web_Project.html">Home</a>
+
+        </li>
+        <li class="breadcrumb-item active">About Us</li>
+    </ol>
+    <section class="hand-crafted py-5">
+        <div class="container">
+            <div class="inner-sec py-md-5 px-lg-5">
+                <h3 class="title text-center"><span class="sub-title">About.</span>Welcome To Our Website</h3>
+                <p class="mb-4 text-center px-lg-4">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla mollis dapibus nunc, ut rhoncus turpis sodales quis. Integer sit amet mattis quam, sit amet ultricies velit. Praesent ullamcorper dui turpis.Integer sit amet mattis quam, sit amet ultricies velit. Praesent ullamcorper dui turpis.</p>
+            </div>
+        </div>
+    </section>
+    <section class="about py-md-5 py-5">
+        <div class="container py-md-3">
+            <h3 class="title text-center">What We Offer</h3>
+            <div class="feature-grids row">
+                <div class="col-md-4 gd-bottom mt-lg-4">
+                    <div class="bottom-gd p-lg-5 p-4">
+                        <span class="fa fa-truck" aria-hidden="true"></span>
+                        <h3 class="my-3">
+                            FREE SHIPPING
+                        </h3>
+                        <p>Integer sit amet mattis quam, sit amet ultricies velit. Praesent ullamcorper dui turpis.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 gd-bottom mt-lg-4">
+                    <div class="bottom-gd2-active p-lg-5 p-4">
+                        <span class="fa fa-bullhorn"></span>
+                        <h3 class="my-3">
+                            FREE RETURN
+                        </h3>
+                        <p>Integer sit amet mattis quam, sit amet ultricies velit. Praesent ullamcorper dui turpis.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 gd-bottom mt-lg-4">
+                    <div class="bottom-gd p-lg-5 p-4">
+                        <span class="fa fa-gift"></span>
+                        <h3 class="my-3">
+                            MEMBER DISCOUNT
+                        </h3>
+                        <p>Integer sit amet mattis quam, sit amet ultricies velit. Praesent ullamcorper dui turpis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hand-crafted py-5">
+        <div class="container py-md-5">
+            <div class="row banner-grids">
+                <div class="col-md-6 banner-image">
+                    <div class="effect-w3">
+                        <img src="Images_for_Web/about.jpg" class="img-fluid image1">
+                    </div>
+                </div>
+                <div class="col-md-6 last-img pl-lg-5 p-3">
+                    <h3 class="title mb-lg-5 mb-3"><span class="sub-title">THE SEASON BEGINGS</span>PROMOTION SALES OFF 50%</h3>
+                    <p class="mb-4">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla mollis dapibus nunc, ut rhoncus turpis sodales quis. Integer sit amet mattis quam, sit amet ultricies velit. Praesent ullamcorper dui turpis.</p>
+                    <ul class="tic-info list-unstyled">
+                        <li>
+                            <span class="fas fa-check mr-2"></span>Integer sit amet mattis quam
+                        </li>
+                        <li>
+                            <span class="fas fa-check mr-2"></span>Praesent ullamcorper dui turpis
+                        </li>
+                        <li>
+                            <span class="fas fa-check mr-2"></span>Integer sit amet mattis quam
+                        </li>
+                        <li>
+                            <span class="fas fa-check mr-2"></span>Integer sit amet mattis quam
+                        </li>
+                    </ul>                
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="stats py-5" id="stats">
+        <div class="container py-md-3">
+            <div class="row stat-grids">
+                <div class="col-lg-6 ser-lt">
+                    <div class="d-flex services-box">
+                        <div class="icon">
+                            <span class="fas fa-chart-line"></span>
+                        </div>
+                        <div class="service-content">
+                            <h4>Inagittis Lacg</h4>
+                            <p class="serp">Quisque sagittis lacus eu lorem sodalesd vulputate velitdipisc inagittis lacg enean adipiscing.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex services-box ser-midd">
+                        <div class="icon">
+                            <span class="fas fa-bell"></span>
+                        </div>
+                        <div class="service-content">
+                            <h4>Velitdipisc Inagittis</h4>
+                            <p class="serp">Quisque sagittis lacus eu lorem sodalesd vulputate velitdipisc inagittis lacg enean adipiscing.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex services-box bx-4">
+                        <div class="icon">
+                            <span class="fas fa-chart-line"></span>
+                        </div>
+                        <div class="service-content">
+                            <h4>Sagittis Lacus</h4>
+                            <p class="serp">Quisque sagittis lacus eu lorem sodalesd vulputate velitdipisc inagittis lacg enean adipiscing.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 ser-right">
+                    <div class="d-flex services-box">
+                        <div class="icon">
+                            <span class="fas fa-chart-line"></span>
+                        </div>
+                        <div class="service-content">
+                            <h4>Inagittis Lacg</h4>
+                            <p class="serp">Quisque sagittis lacus eu lorem sodalesd vulputate velitdipisc inagittis lacg enean adipiscing.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex services-box ser-midd">
+                        <div class="icon">
+                            <span class="fas fa-bell"></span>
+                        </div>
+                        <div class="service-content">
+                            <h4>Velitdipisc Inagittis</h4>
+                            <p class="serp">Quisque sagittis lacus eu lorem sodalesd vulputate velitdipisc inagittis lacg enean adipiscing.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex services-box bx-4">
+                        <div class="icon">
+                            <span class="fas fa-chart-line"></span>
+                        </div>
+                        <div class="service-content">
+                            <h4>Sagittis Lacus</h4>
+                            <p class="serp">Quisque sagittis lacus eu lorem sodalesd vulputate velitdipisc inagittis lacg enean adipiscing.</p>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </section>
+    <section class="testimonials py-5">
+        <div class="container">
+            <div class="row">
+                <div class="sentence-info text-center">
+                    <h6 class="my-md-2 my-3">Jenifer Burns</h6>
+
+                    <ul class="list-unstyled project-icons clients">
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-star"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-star"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-star"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-star"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-star-half-o"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p><span class="fa fa-quote-left"></span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dicta maxime quisquam tempora, impedit culpa voluptas nam nesciunt commodi natus, iusto, itaque assumenda eius nulla earum fuga nemo quae quos?.<span class="fa fa-quote-right"></span></p>
+                </div> 
+            </div>
+        </div>
+    </section>
+    <section class="about py-5">
+        <div class="container">
+            <h4 class="title text-center">POPULAR PRODUCTS</h4>
+            <div class="row">
+                <div class="col-md-6 latest-left">
+                    <div class="product-shoe-info shoe text-center">
+                        <img src="./Images_for_Web/img1.jpg" class="img-fluid" alt="">
+                        <div class="shop-now"><a href="Shop_Single.html" class="btn"><b>Shop Now</b></a></div>
+                    </div>
+                </div>
+                <div class="col-md-6 latest-right">
+                    <div class="row latest-grids">
+                        <div class="latest-grid1 product col-lg-12">
+                           <div class="product-shoe-info shoe text-center">
+                                <div class="men-item">
+                                    <img src="./Images_for_Web/img2.jpg" class="img-fluid" alt="">
+                                    <div class="shop-now"><a href="Shop_Single.html" class="btn"><b>Shop Now</b></a></div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="latest-grid2 product col-12 mt-lg-4">
+                            <div class="product-shoe-info shoe text-center">
+                                <div class="men-item">
+                                    <img src="./Images_for_Web/img3.jpg" class="img-fluid" alt="">
+                                    <div class="shop-now"><a href="Shop_Single.html" class="btn"><b>Shop Now</b></a></div>
+                                </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="brands py-5" id="brands">
+        <div class="container py-lg-0">
+            <div class="row text-center brand-items">
+                <div class="col-lg-2 col-3">
+                    <a href="#"><span class="fab fa-connectdevelop"></span></a>
+                </div>
+                <div class="col-lg-2 col-3">
+                    <a href="#"><span class="fab fa-empire"></span></a>
+                </div>
+                <div class="col-lg-2 col-3">
+                    <a href="#"><span class="fab fa-ioxhost"></span></a>
+                </div>
+                <div class="col-lg-2 col-3">
+                    <a href="#"><span class="fa-brands fa-first-order"></span></a>
+                </div>
+                <div class="col-lg-2 col-3 mt-sm-0 mt-4">
+                    <a href="#"><span class="fab fa-joomla"></span></a>
+                </div>
+                <div class="col-lg-2 col-3 mt-sm-0 mt-4">
+                    <a href="#"><span class="fab fa-dropbox"></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer-top">
+                <div class="col-lg-4 footer-grid_section_project">
+                    <h2 class="logo-2 mb-lg-4 mb-3">
+                        <a href="#"><span class="fa fa-bold"></span>ootie</a>
+                    </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum hic, et quaerat quos suscipit ea ipsam minus quo quibusdam aliquam voluptate, harum voluptatibus itaque. Aspernatur ex quis dignissimos non eaque.</p>
+                    <h5 class="sub-con-fo ad-info my-4">Catch on Social</h5>
+                    <ul class="project_social_list list-unstyled">
+                        <li>
+                            <a href="#" class="facebook">
+                                <span class="fab fa-facebook-f"></span>
+                            </a>
+                        </li>
+                        <li class="mx-2">
+                            <a href="#" class="twitter">
+                                <span class="fab fa-twitter"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="instagram">
+                                <span class="fab fa-instagram"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="google">
+                                <span class="fab fa-google-plus"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-8 footer-right">
+                    <div class="project-news-letter">
+                        <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Newsletter</h3>
+
+                        <p>By subscribing to our mailing list you will always get latest news and updates from us.</p>
+                        <form action="#" method="post" class="project-newsletter">
+                            <input type="email" name="Email" placeholder="Enter your Email">
+                            <button class="btn1"><span class="fa fa-paper-plane"></span></button>
+
+                        </form>
+                    </div>
+                    <div class="row mt-lg-4 bottom-project-sec-nav mx-0">
+                        <div class="col-md-4 footer-grid_section_project">
+                            <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Information</h3>
+                            <ul class="list-unstyled project-icons">
+                                <li>
+                                    <a href="#">HOME</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a href="#">About US</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a href="#">Gallery</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a href="#">Service</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a href="#">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 footer-grid_section_project">
+                            <div class="agileinfo_social_icons">
+                                <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Customer Service</h3>
+                                <ul class="list-unstyled project-icons">
+                                    <li>
+                                        <a href="#">About Us</a>
+                                    </li>
+                                    <li class="mt-3">
+                                        <a href="#">Delivery & Returns</a>
+                                    </li>
+                                    <li class="mt-3">
+                                        <a href="#">Warranty</a>
+                                    </li>
+                                    <li class="mt-3">
+                                        <a href="#">Terms & Condition</a>
+                                    </li>
+                                    <li class="mt-3">
+                                        <a href="#">Privacy Policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4 footer-grid_section_project">
+                            <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Contact Info</h3>
+                            <div class="contact-info">
+                                <div class="footer-address-inf">
+                                    <h5 class="ad-info mb-2">Phone</h5>
+                                    <p>+121 098 8907 9987</p>
+                                </div>
+                                <div class="footer-address-inf my-4">
+                                    <h5 class="ad-info mb-2">Email</h5>
+                                    <p><a href="mail:info@example.com">info@example.com</a></p>
+                                </div>
+                                <div class="footer-address-inf">
+                                    <h5 class="ad-info mb-2">Location</h5>
+                                    <p>Honey Avenue, New York City</p>
+                                </div>
+                            </div>
+                        </div>     
+                    </div>
+
+                    <div class="cpy-right text-left row">
+                        <p class="col-md-10">© 2019 Bootie.All rights reserved | Design by
+                            <a href="https://w3layouts.com/">w3layouts.</a>
+                        </p>
+                        <a href="#" class="move-top text-right col-md-2"><span class="fas fa-arrow-up"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

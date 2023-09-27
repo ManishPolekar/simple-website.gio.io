@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+         body
+        {
+            margin: 0;
+            font-size: 100%;
+            background: white;
+
+        }
+        body a
+        {
+            text-decoration: none;
+            transition: 0.5 all;
+        }
+        h1,h2,h3,h4,h5,h6
+        {
+            margin: 0;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+        p
+        {
+            font-size: 0.9em;
+            color: #8e9398;
+            line-height: 2em;
+            letter-spacing: 1px;
+        }
+        ul
+        {
+            margin: 0;
+            padding: 0;
+        }
+        body img
+        {
+            border-radius: 4px;
+        }
+        header
+        {
+            position: absolute;
+            z-index: 9;
+            width: 100%;
+        }
+        nav
+        {
+            margin: 0;
+            padding: 0;
+        }
+        #logo a
+        {
+            float: left;
+            display: initial;
+            margin: 0;
+            letter-spacing: 1px;
+            color: white;
+            font-size: 1em;
+            font-weight: 700;
+            text-shadow: 2px 5px 3px black;
+        }
+        nav::after
+        {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        nav ul
+        {
+            float: right;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            position: relative;
+        }
+        nav ul li
+        {
+            margin: 0px 1em;
+            display: inline-block;
+            float: left;
+        }
+        .menu li a
+        {
+            font-weight: 500;
+            font-size: 1.0em;
+            letter-spacing: 2px;
+            padding-left: 0;
+            padding-right: 0;
+            padding: 10px 0;
+            color: white;
+            text-transform: uppercase;
+        }
+        .menu li ul li a
+        {
+            color: #555;
+            padding: 10px 10px;
+            font-size: 0.8em;
+        }
+        .menu li ul li:hover
+        {
+            background: wheat ;
+        }
+        nav .menu li a:hover
+        {
+            color: red;
+        }
+        .menu li.active a
+        {
+            color: red;
+        }
+        nav ul li:hover > ul
+        {
+            display: inherit;
+        }
+        nav ul ul li
+        {
+            width: 170px;
+            float: none;
+            display: list-item;
+            position: relative;
+            margin: 0;
+        }
+        nav ul ul li a
+        {
+            color: #333;
+            padding: 5px 10px;
+            display: block;
+        }
+        /*Single Page*/
+        .main-banner.inner
+        {
+            background: url(./Images_for_Web/banner.jpg)no-repeat center;
+            background-size: cover;
+            position: relative;
+            height: 21em;
+        }
+        .banner-info
+        {
+            padding: 16em 0 0em 3em;
+            width: 32%;
+        } 
+        .banner-info h2 
+        {
+            font-size: 3.5em;
+            letter-spacing: 2px;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 2px 5px 3px black;
+        }
+        .banner-info p 
+        {
+            color: white;
+            font-size: 0.8em;
+            letter-spacing: 2px;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin: 0;
+            text-shadow: 2px 5px 3px black;
+        }
+        ol.breadcrumb
+        {
+            background: none;
+            margin: 0;
+            padding: 1em 2em;
+            background: #f7f7f7;
+
+        }
+        li.breadcrumb-item
+        {
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+        .breadcrumb-item.active
+        {
+            color: gray;
+        }
+        li.breadcrumb-item a
+        {
+            color: red;
+        }
+        h3.title
+        {
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            color: #292a2b;
+            text-transform: uppercase;
+            margin-bottom: 1em;
+        }
+        /*Single Page*/
+        .sub-title
+        {
+            font-size: 0,3em;
+            color: #919aa0;
+            letter-spacing: 2px;
+            display: block;
+            text-transform: uppercase;
+        }
+        .events-info, .sub-title
+        {
+            font-size: 0.7em;
+        }
+        /*footer*/
+         footer
+        {
+            background: #f7f7f7;
+        }
+        h3.footer-title
+        {
+            font-size: 1.1em;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #3d3f44;
+        }
+        .footer-grid_section_project
+        {
+            padding: 3em 0;
+        }
+        .footer-right
+        {
+            border-left: 1px solid #ddd ;
+            padding: 3em 0em 3em 2em;
+        }
+        footer p
+        {
+            font-size: 0.9em;
+        }
+        form.project-newsletter
+        {
+            display: flex;
+            margin-bottom: 2.5em;
+        }
+        .bottom-project-sec-nav
+        {
+            border-top: 1px solid #ddd;
+        }
+        .project-newsletter input[type='email']
+        {
+            padding: 0.6em 1em;
+            font-size: 15px;
+            color: black;
+            outline: none;
+            letter-spacing: 2px;
+            border: none;
+            border: none;
+            flex-basis: 70%;
+            background: #efeeee;
+        }
+        .project-newsletter button.btn1
+        {
+            color: red;
+            font-size: 17px;
+            letter-spacing: 1px;
+            padding: 14px 0;
+            border: transparent;
+            text-transform: uppercase;
+            transition: 0.5s all;
+            background: black;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 0;
+            padding: 0.7em 2em;
+        }
+        h2.logo-2 a
+        {
+            font-weight: 700;
+            font-size: 34px;
+            color: black;
+            text-shadow: 2px 5px 3px rgb(0,0,0,0.06);
+            letter-spacing: 1px;
+        }
+        .project_social_list li
+        {
+            display: inline-block;
+        }
+        .project_social_list li a
+        {
+            width: 34px;
+            height: 34px;
+            text-align: center;
+            display: inline-block;
+            font-size: 13px;
+            border-radius: 50%;
+        }
+        .project_social_list li a span
+        {
+            color: white;
+            line-height: 34px;
+        }
+        a.facebook
+        {
+            background: #3b5998;
+        }
+        a.twitter
+        {
+            background: rgb(54, 143, 220);
+        }
+        a.instagram
+        {
+            background: red;
+        }
+        a.google
+        {
+            background-color: #F44336;
+        }
+        .contact-info h5
+        {
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            color: #5e5e61;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .footer-grid_section_project li a
+        {
+            color: #727377;
+            font-size: 0.8em;
+            letter-spacing: 1px;
+        }
+        .footer-grid_section_project li a:hover
+        {
+            opacity: 0.8;
+        }
+        .cpy-right
+        {
+            display: flex;
+        }
+        .cpy-right p
+        {
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 0;
+            margin-top: 0.9em;
+            color: #555;
+        }
+        .cpy-right p a
+        {
+            color: #555;
+        }
+        .cpy-right p a:hover
+        {
+            color: red;
+        }
+        a.move-top span
+        {
+            color: white;
+            width: 36px;
+            height: 36px;
+            text-align: center;
+            border: none;
+            line-height: 2em;
+            background: #4a4b4c;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 px-0">
+                <div class="main-banner inner" id="home">
+                    <header class="header">
+                        <nav class="navbar navbar-expand-md navbar">
+                            <div id="logo">
+                                <h1><a href="#"><span class="fa fa-bold" aria-hidden="true"></span>ootie</a></h1>
+                            </div>    
+                                <ul class="menu navbar-nav ml-auto">
+                                    <li class="active"><a href="Web_Project.html" class="nav-link"><b>Home</b></b></a></li>
+                                    <li><a href="about.html" class="nav-link"><b>About</b></a></li>
+                                    <li><a href="Blog.html" class="nav-link"><b>Blog</b></a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                            <b>DROP DOWN</b>
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <ul type="none">
+                                                <li><a href="Blog.html" class="text-decoration-none"><b>Blog</b></a></li>
+                                                <li><a href="#" class="text-decoration-none"><b>Shop Now</b></a></li>
+                                                <li><a href="#" class="text-decoration-none"><b>Single Page</b></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>    
+                                    <li class="nav-item"><a href="#" class="nav-link"><b>Contact Us</b></a></li>
+                                </ul>
+                        </nav>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="Web_Project.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Single Page</li>
+    </ol>
+    <section class="ab-info-main py-md-5">
+        <div class="container py-md-3">
+            <h3 class="title text-center mb-lg-5 mb-3">Single Page</h3>
+            <div class="speak px-lg-5">
+                <div class="row mt-lg-5 mt-4">
+                    <div class="col-md-12 events-img">
+                        <img src="./Images_for_Web/single.jpg" class="img-fluid" alt="user-image">
+                    </div>
+                    <div class="col-md-12 events-info my-3">
+                        <h3><span class="sub-title">01</span>Tech beauty</h3>
+                        <h4 class="my-3"><a href="#" class="text-dark">VIVAMUS ID TEMPOR FELIS. CRAS SAGITTIS MI SIT AMET</a></h4>
+                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    </div>
+                    <p>Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat..</p>
+                    <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat..</p>
+                </div>
+                <div class="row my-lg-5 my-3">
+                    <div class="col-md-6 text-info">
+                        <p>Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor elementum id enim volutpat...</p>
+                    </div>
+                    <div class="col-md-6 team-img">
+                        <img src="Images_for_Web/img6.jpg" class="img-fluid" alt="user-image">
+                    </div>
+                </div>
+                <div class="single-form-left">
+                    <div class="contact-single">
+                        <h3><span class="sub-title">01</span>Leave a Reply</h3>
+                        <form action="#" method="get" class="mt-4">
+                            <div class="form-group">
+                                <label for="contactcomment">Your Comment*</label>
+                                <textarea class="form-control border" rows="5" id="contactcomment" required=""></textarea>
+                            </div>
+                            <div class="d-sm-flex">
+                                <div class="col-sm-6 form-group p-0">
+                                    <label for="contactcomment">Name*</label>
+                                    <input type="text" class="form-control border" id="contactusername" required="">
+                                </div>
+                                <div class="col-sm-6 form-group ml-sm-3">
+                                    <label for="contactcomment">Email*</label>
+                                    <input type="email" class="form-control border" id="contactemail" required="">
+                                </div>
+                            </div>
+                            <button type="submit" class="mt-3 btn btn-success btn-block py-3">Post Comment</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="media py-5">
+                    <img src="Images_for_Web/te2.jpg" class="mr-3 img-fluid rounded-circle" alt="image">
+                    <div class="media-body">
+                        <h5 class="mt-0">Daniel Doe</h5>
+                        <p class="mt-2">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.  
+                        </p>
+                        <div class="media mt-5">
+                            <a class="pr-3" href="#">
+                                <img src="Images_for_Web/te1.jpg" class="img-fluid rounded-circle" alt="image">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0">Leia Organa</h5>
+                                <p class="mt-2">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla..</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row footer-top">
+                <div class="col-lg-4 footer-grid_section_project">
+                    <h2 class="logo-2 mb-lg-4 mb-3">
+                        <a href="#"><span class="fa fa-bold"></span>ootie</a>
+                    </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum hic, et quaerat quos suscipit ea ipsam minus quo quibusdam aliquam voluptate, harum voluptatibus itaque. Aspernatur ex quis dignissimos non eaque.</p>
+                    <h5 class="sub-con-fo ad-info my-4">Catch on Social</h5>
+                    <ul class="project_social_list list-unstyled">
+                        <li>
+                            <a href="#" class="facebook">
+                                <span class="fab fa-facebook-f"></span>
+                            </a>
+                        </li>
+                        <li class="mx-2">
+                            <a href="#" class="twitter">
+                                <span class="fab fa-twitter"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="instagram">
+                                <span class="fab fa-instagram"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="google">
+                                <span class="fab fa-google-plus"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-8 footer-right">
+                    <div class="project-news-letter">
+                        <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Newsletter</h3>
+
+                        <p>By subscribing to our mailing list you will always get latest news and updates from us.</p>
+                        <form action="#" method="post" class="project-newsletter">
+                            <input type="email" name="Email" placeholder="Enter your Email">
+                            <button class="btn1"><span class="fa fa-paper-plane"></span></button>
+
+                        </form>
+                    </div>
+                    <div class="row mt-lg-4 bottom-project-sec-nav mx-0">
+                        <div class="col-md-4 footer-grid_section_project">
+                            <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Information</h3>
+                            <ul class="list-unstyled project-icons">
+                                <li>
+                                    <a href="#">HOME</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a href="#">About US</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a href="#">Gallery</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a href="#">Service</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a href="#">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 footer-grid_section_project">
+                            <div class="agileinfo_social_icons">
+                                <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Customer Service</h3>
+                                <ul class="list-unstyled project-icons">
+                                    <li>
+                                        <a href="#">About Us</a>
+                                    </li>
+                                    <li class="mt-3">
+                                        <a href="#">Delivery & Returns</a>
+                                    </li>
+                                    <li class="mt-3">
+                                        <a href="#">Warranty</a>
+                                    </li>
+                                    <li class="mt-3">
+                                        <a href="#">Terms & Condition</a>
+                                    </li>
+                                    <li class="mt-3">
+                                        <a href="#">Privacy Policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4 footer-grid_section_project">
+                            <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Contact Info</h3>
+                            <div class="contact-info">
+                                <div class="footer-address-inf">
+                                    <h5 class="ad-info mb-2">Phone</h5>
+                                    <p>+121 098 8907 9987</p>
+                                </div>
+                                <div class="footer-address-inf my-4">
+                                    <h5 class="ad-info mb-2">Email</h5>
+                                    <p><a href="mail:info@example.com">info@example.com</a></p>
+                                </div>
+                                <div class="footer-address-inf">
+                                    <h5 class="ad-info mb-2">Location</h5>
+                                    <p>Honey Avenue, New York City</p>
+                                </div>
+                            </div>
+                        </div>     
+                    </div>
+
+                    <div class="cpy-right text-left row">
+                        <p class="col-md-10">© 2019 Bootie.All rights reserved | Design by
+                            <a href="https://w3layouts.com/">w3layouts.</a>
+                        </p>
+                        <a href="#" class="move-top text-right col-md-2"><span class="fas fa-arrow-up"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>  
+    
+    
+</body>
+</html>
